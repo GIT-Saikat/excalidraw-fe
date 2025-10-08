@@ -22,11 +22,13 @@ export default function Navbar() {
   const { mode, toggleColorMode } = useColorMode();
   return (
     <AppBar
-      position="static"
+      position="sticky"
       color="transparent"
       elevation={0}
       sx={{
-        position: "relative",
+        position: "sticky",
+        top: 0,
+        zIndex: (theme) => theme.zIndex.appBar,
         borderBottom: "1px solid",
         borderColor: (theme) =>
           theme.palette.mode === "dark"

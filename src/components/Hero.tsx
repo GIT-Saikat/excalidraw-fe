@@ -63,7 +63,7 @@ export default function Hero() {
             <div className="relative w-full md:max-w-lg md:ml-auto rounded-3xl border border-neutral-200 bg-white p-2 md:p-3 shadow-[0_2px_10px_rgba(0,0,0,0.06)] dark:border-white/10 dark:bg-neutral-900 dark:shadow-[0_8px_30px_rgba(0,0,0,0.6)]">
               {/* Top-right floating pencil badge */}
               <div className="pointer-events-none absolute -top-4 right-4 select-none rounded-full bg-black p-2 h-10 w-10 flex items-center justify-center shadow-lg ring-1 ring-black/5 dark:bg-neutral-800 dark:ring-white/10">
-                <svg className="h-6 w-6 text-white text-neutral-900 dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <svg className="h-6 w-6 text-white icon-color-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   {/* <path d="M12 20h9" /> */}
                   <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4 12.5-12.5z" />
                 </svg>

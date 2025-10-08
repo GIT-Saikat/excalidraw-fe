@@ -24,3 +24,28 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Subtle blink animation for icons (dark -> less dark -> dark) */
+/* @keyframes icon-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.icon-blink {
+  animation: icon-blink 2s ease-in-out infinite;
+} */
+
+/* Color pulse (brightness) using CSS variables */
+:root {
+  --icon-bright: #ffffff;
+  --icon-dim: #000000; /* gray-300 */
+}
+
+@keyframes icon-color-pulse {
+  0%, 0% { color: var(--icon-dim); }
+  0% { color: var(--icon-bright); }
+}
+
+.icon-color-pulse {
+  animation: icon-color-pulse 2s ease-in-out infinite;
+}
