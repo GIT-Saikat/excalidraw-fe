@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useMemo, useState, ReactNode } from "react";
+import { createContext, useContext, useMemo, useState, useEffect, ReactNode } from "react";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 
 type ColorMode = "light" | "dark";
@@ -43,6 +43,16 @@ export default function ColorModeProvider({ children }: { children: ReactNode })
   );
 
   const value = useMemo(() => ({ mode, toggleColorMode }), [mode]);
+
+  // Keep Tailwind dark variant in sync by toggling the `dark` class on <html>
+  useEffect(() => {
+    const root = document.documentElement;
+    if (mode === "dark") {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+  }, [mode]);
 
   return (
     <ColorModeContext.Provider value={value}>

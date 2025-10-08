@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
+
 :root {
-  --background: #ffffff;
+  --background: #fff;
   --foreground: #171717;
 }
 
@@ -10,6 +11,12 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+/* Allow manual dark mode via `.dark` on <html> */
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,27 +32,77 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Subtle blink animation for icons (dark -> less dark -> dark) */
-/* @keyframes icon-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
-}
+@layer components {
+  .floating-badge-bl {
+    @apply pointer-events-none absolute -bottom-4 left-4 select-none rounded-full bg-white p-2 h-10 w-10 flex items-center justify-center shadow-lg ring-1 ring-black/5;
+  }
 
-.icon-blink {
-  animation: icon-blink 2s ease-in-out infinite;
-} */
+  .dark .floating-badge-bl {
+    @apply bg-neutral-800 ring-white/10;
+  }
+  
+  /* Consolidated frame styles for the preview card */
+  .frame-card {
+    @apply relative w-full md:max-w-lg md:ml-auto rounded-3xl border border-neutral-200 bg-white p-2 md:p-3;
 
-/* Color pulse (brightness) using CSS variables */
-:root {
-  --icon-bright: #ffffff;
-  --icon-dim: #000000; /* gray-300 */
-}
+    box-shadow: 0 2px 10px rgb(0 0 0 / 6%);
+  }
 
-@keyframes icon-color-pulse {
-  0%, 0% { color: var(--icon-dim); }
-  0% { color: var(--icon-bright); }
-}
+  .dark .frame-card {
+    @apply dark:border-white/10 dark:bg-neutral-900;
 
-.icon-color-pulse {
-  animation: icon-color-pulse 2s ease-in-out infinite;
+    box-shadow: 0 8px 30px rgb(0 0 0 / 60%);
+  }
+
+  /* Top-right floating badge */
+  .floating-badge-tr {
+    @apply pointer-events-none absolute -top-4 right-4 select-none rounded-full bg-black p-2 h-10 w-10 flex items-center justify-center shadow-lg ring-1 ring-black/5;
+  }
+
+  .dark .floating-badge-tr {
+    @apply bg-neutral-800 ring-white/10;
+  }
+
+  /* Icon inside floating badges */
+  .floating-badge-icon {
+    @apply h-6 w-6 text-white;
+  }
+
+  /* Hero features list */
+  .hero-features {
+    @apply mt-6 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-neutral-600;
+  }
+
+  .dark .hero-features {
+    @apply text-neutral-300;
+  }
+
+  /* Ghost-style button used in Hero */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold text-neutral-900 ring-1 ring-neutral-900/10 transition hover:bg-neutral-50;
+  }
+
+  .dark .btn-ghost {
+    @apply text-white ring-white/20 hover:bg-white/10;
+  }
+
+  /* Primary solid button used in Hero */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-neutral-900 px-5 py-3 text-sm font-semibold text-white shadow-sm ring-1 ring-neutral-900/10 transition hover:bg-neutral-800;
+  }
+
+  .dark .btn-primary {
+    @apply bg-white text-neutral-900 hover:bg-neutral-200;
+  }
+
+  /* Hero title */
+  .hero-title {
+    @apply text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl md:text-5xl;
+
+    font-weight: 800;
+  }
+
+  .dark .hero-title {
+    @apply text-white;
+  }
 }
