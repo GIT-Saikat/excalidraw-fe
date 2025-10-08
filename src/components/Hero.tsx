@@ -1,20 +1,21 @@
 "use client";
 
 import Image from "next/image";
+import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 
 export default function Hero() {
   return (
     <section className="bg-white dark:bg-neutral-900">
-      <div className="mx-auto max-w-screen-lg px-4 sm:px-6">
-        <div className="grid grid-cols-1 items-center gap-10 py-14 md:grid-cols-2 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="grid grid-cols-1 items-center gap-10  md:grid-cols-2 py-10 md:py-16 ">
           {/* Left: Copy */}
-          <div>
-            <h1 className="text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-white sm:text-5xl md:text-6xl">
+          <div className="-mt-2 sm:-mt-3 md:-mt-12">
+            <h1 className="text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-white sm:text-5xl md:text-5xl font-weight:800">
               Create and collaborate
               <br />
               visually
             </h1>
-            <p className="mt-6 text-lg leading-8 text-neutral-600 dark:text-neutral-300">
+            <p className="mt-6 text-lg leading-8 text-neutral-600 dark:text-neutral-300 ">
               Excalidraw is a virtual collaborative whiteboard tool that lets you easily
               sketch diagrams that have a hand-drawn feel to them.
             </p>
@@ -59,11 +60,11 @@ export default function Hero() {
 
           {/* Right: Framed image mock */}
           <div className="relative">
-            <div className="relative rounded-3xl border border-neutral-200 bg-white p-3 shadow-[0_2px_10px_rgba(0,0,0,0.06)] dark:border-white/10 dark:bg-neutral-900 dark:shadow-[0_8px_30px_rgba(0,0,0,0.6)]">
+            <div className="relative w-full md:max-w-lg md:ml-auto rounded-3xl border border-neutral-200 bg-white p-2 md:p-3 shadow-[0_2px_10px_rgba(0,0,0,0.06)] dark:border-white/10 dark:bg-neutral-900 dark:shadow-[0_8px_30px_rgba(0,0,0,0.6)]">
               {/* Top-right floating pencil badge */}
-              <div className="pointer-events-none absolute -top-4 right-4 select-none rounded-full bg-white p-2 shadow-lg ring-1 ring-black/5 dark:bg-neutral-800 dark:ring-white/10">
-                <svg className="h-6 w-6 text-neutral-900 dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M12 20h9" />
+              <div className="pointer-events-none absolute -top-4 right-4 select-none rounded-full bg-black p-2 h-10 w-10 flex items-center justify-center shadow-lg ring-1 ring-black/5 dark:bg-neutral-800 dark:ring-white/10">
+                <svg className="h-6 w-6 text-white text-neutral-900 dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  {/* <path d="M12 20h9" /> */}
                   <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4 12.5-12.5z" />
                 </svg>
               </div>
@@ -78,8 +79,8 @@ export default function Hero() {
                 />
               </div>
               {/* Floating badge */}
-              <div className="pointer-events-none absolute -bottom-4 left-4 select-none rounded-full bg-white p-2 shadow-lg ring-1 ring-black/5 dark:bg-neutral-800 dark:ring-white/10">
-                <span className="block h-6 w-6 rounded-full bg-neutral-900 dark:bg-white"></span>
+              <div className="pointer-events-none absolute -bottom-4 left-4 select-none rounded-full bg-white p-2 h-10 w-10 flex items-center justify-center shadow-lg ring-1 ring-black/5 dark:bg-neutral-800 dark:ring-white/10">
+                <PeopleAltOutlinedIcon className=" text-neutral-900 dark:text-white"  />
               </div>
             </div>
           </div>
