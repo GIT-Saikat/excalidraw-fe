@@ -1,0 +1,9 @@
+position="static": Keeps the AppBar in the normal document flow at the top of the page (not fixed).
+color="transparent": Removes default background color so it inherits the page background.
+elevation={0}: Disables MUI’s default box‑shadow.
+sx={{ ... }}: Inline styling using MUI’s sx prop.
+borderBottom: "1px solid": Adds a thin underline across the bottom.
+borderColor: (theme) => ...: Chooses a subtle border color based on theme mode:
+dark mode → semi‑transparent white
+light mode → semi‑transparent black
+backdropFilter: "saturate(180%) blur(6px)": Slight saturation and blur for a frosted, soft look over content behind the bar.

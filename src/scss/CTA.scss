@@ -1,0 +1,20 @@
+@reference "tailwindcss";
+
+@layer utilities {
+  .cta-title { @apply text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900; }
+
+  .para-CTA_title { @apply mt-3 text-neutral-500 ; }
+
+  .cta-actions { @apply mt-8 flex flex-wrap items-center justify-center gap-4; }
+
+  .cta-button1 { @apply inline-flex items-center justify-center rounded-lg bg-neutral-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-neutral-900/10 transition hover:bg-neutral-800; }
+
+  .cta-button2 { @apply inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold text-neutral-900 ring-1 ring-neutral-900/10 transition hover:bg-neutral-50; }
+}
+
+.dark .cta-title { @apply text-white; }
+.dark .para-CTA_title { @apply text-white; }
+.dark .cta-button1 { @apply bg-white text-neutral-900 hover:bg-neutral-200; }
+.dark .cta-button2 { @apply text-white ring-white/20 hover:bg-white/10; }
+
+

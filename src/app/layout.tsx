@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "../scss/features.scss";
+import "../scss/CTA.scss";
 import Navbar from "../components/Navbar";
 import ClientOnly from "../components/ClientOnly";
 import ColorModeProvider from "../theme/ColorModeProvider";

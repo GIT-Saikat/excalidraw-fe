@@ -52,8 +52,8 @@ export default function ColorModeProvider({ children }: { children: ReactNode })
             main: mode === "light" ? "#1976d2" : "#90caf9",
           },
           background: {
-            default: mode === "light" ? "#ffffff" : "#0a0a0a",
-            paper: mode === "light" ? "#ffffff" : "#121212",
+            default: mode === "light" ? "#ffffff" : "#171717", // Tailwind neutral-900
+            paper: mode === "light" ? "#ffffff" : "#1f1f1f",
           },
         },
         shape: { borderRadius: 10 },

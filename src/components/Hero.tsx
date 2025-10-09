@@ -10,7 +10,7 @@ export default function Hero() {
   const isDark = theme.palette.mode === "dark";
   return (
     <section className={isDark ? "bg-neutral-900" : "bg-white"}>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 mt-25">
         <div className="grid grid-cols-1 items-center gap-10  md:grid-cols-2 py-10 md:py-16 ">
           {/* Left: Copy */}
           <div className="-mt-2 sm:-mt-3 md:-mt-12">
@@ -65,7 +65,7 @@ export default function Hero() {
               </div>
               <div className="overflow-hidden rounded-2xl">
                 <Image
-                  src={WINDOW}
+                  src="https://excalidraw.com/og-image-3.png"
                   alt="App preview"
                   width={900}
                   height={560}

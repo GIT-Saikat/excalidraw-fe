@@ -1,0 +1,43 @@
+@reference "tailwindcss";
+
+/* Consolidated utilities layer for feature styles */
+@layer utilities {
+  /* Base utilities */
+  .section-title { @apply text-3xl font-bold tracking-tight text-neutral-900; }
+
+  .para-title { @apply text-neutral-500 mt-2; }
+
+  .grid-styles { @apply grid grid-cols-1 gap-6; }
+
+  .feature-card { @apply rounded-2xl bg-white shadow-[0_12px_16px_-8px_rgba(0,0,0,0.18)] ring-1 ring-neutral-200 p-6 text-center; }
+
+  .feature-badge { @apply mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full; background-color: #E5E5E7; }
+
+  .feature-title { @apply text-lg font-semibold text-neutral-900; }
+
+  .feature-desc { @apply mt-2 text-sm text-neutral-600; }
+  
+  .feature-badge-icon { @apply text-neutral-900; }
+
+  /* Dark variants */
+  .dark .section-title { @apply text-white; }
+  .dark .para-title { @apply text-white; }
+  .dark .feature-card { @apply bg-neutral-900 ring-white/10 shadow-none; }
+  .dark .feature-badge { @apply bg-neutral-800 ring-1 ring-white/40; }
+  .dark .feature-title { @apply text-white; }
+  .dark .feature-desc { @apply text-neutral-300; }
+  .dark .feature-badge-icon { @apply text-white; }
+
+  /* Ensure icons inside feature-badge are black in light mode (override .text-theme) */
+  .feature-badge .text-theme { @apply text-neutral-900; }
+  .dark .feature-badge .text-theme { @apply text-white; }
+
+  /* Responsive variants */
+  @media (min-width: 640px) {
+    .section-title { @apply text-4xl; }
+  }
+  @media (min-width: 768px) {
+    .grid-styles { @apply grid-cols-3; }
+  }
+}
+
