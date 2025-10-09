@@ -1,11 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import { WINDOW, CheckCircleIcon, PencilIcon } from "@/svgs";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
+import { useTheme } from "@mui/material/styles";
 
 export default function Hero() {
+  const theme = useTheme();
+  const isDark = theme.palette.mode === "dark";
   return (
-    <section className="bg-white dark:bg-neutral-900">
+    <section className={isDark ? "bg-neutral-900" : "bg-white"}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid grid-cols-1 items-center gap-10  md:grid-cols-2 py-10 md:py-16 ">
           {/* Left: Copy */}
@@ -15,7 +19,7 @@ export default function Hero() {
               <br />
               visually
             </h1>
-            <p className="mt-6 text-lg leading-8 text-neutral-600 dark:text-neutral-300 ">
+            <p className={`mt-6 text-lg leading-8 ${isDark ? "text-white" : "text-neutral-600"}`}>
               Excalidraw is a virtual collaborative whiteboard tool that lets you easily
               sketch diagrams that have a hand-drawn feel to them.
             </p>
@@ -38,21 +42,15 @@ export default function Hero() {
 
               <ul className="hero-features">
               <li className="flex items-center gap-2">
-                <svg className="h-5 w-5 text-emerald-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.707a1 1 0 00-1.414-1.414L9 10.172 7.707 8.879a1 1 0 10-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
+                <CheckCircleIcon className="h-5 w-5 text-emerald-500" />
                 Free to use
               </li>
               <li className="flex items-center gap-2">
-                <svg className="h-5 w-5 text-emerald-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.707a1 1 0 00-1.414-1.414L9 10.172 7.707 8.879a1 1 0 10-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
+                <CheckCircleIcon className="h-5 w-5 text-emerald-500" />
                 Real-time collaboration
               </li>
               <li className="flex items-center gap-2">
-                <svg className="h-5 w-5 text-emerald-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.707a1 1 0 00-1.414-1.414L9 10.172 7.707 8.879a1 1 0 10-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
+                <CheckCircleIcon className="h-5 w-5 text-emerald-500" />
                 No sign-up required
               </li>
             </ul>
@@ -63,14 +61,11 @@ export default function Hero() {
             <div className="frame-card">
               {/* Top-right floating pencil badge */}
               <div className="floating-badge-tr">
-                <svg className="h-6 w-6 text-white icon-color-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  {/* <path d="M12 20h9" /> */}
-                  <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4 12.5-12.5z" />
-                </svg>
+                <PencilIcon className="h-6 w-6 text-white icon-color-pulse" />
               </div>
               <div className="overflow-hidden rounded-2xl">
                 <Image
-                  src="/window.svg"
+                  src={WINDOW}
                   alt="App preview"
                   width={900}
                   height={560}
@@ -80,7 +75,7 @@ export default function Hero() {
               </div>
               {/* Floating badge */}
               <div className="floating-badge-bl">
-                <PeopleAltOutlinedIcon className=" text-neutral-900 dark:text-white"  />
+                <PeopleAltOutlinedIcon className={`${isDark ? "text-white" : "text-black"}`}  />
               </div>
             </div>
           </div>

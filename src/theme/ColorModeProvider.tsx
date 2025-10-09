@@ -21,7 +21,27 @@ export function useColorMode() {
 export default function ColorModeProvider({ children }: { children: ReactNode }) {
   const [mode, setMode] = useState<ColorMode>("light");
 
-  const toggleColorMode = () => setMode((prev) => (prev === "light" ? "dark" : "light"));
+  // Initialize from localStorage or system preference
+  useEffect(() => {
+    try {
+      const stored = window.localStorage.getItem("color-mode");
+      if (stored === "light" || stored === "dark") {
+        setMode(stored);
+        return;
+      }
+    } catch {}
+    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setMode(prefersDark ? "dark" : "light");
+  }, []);
+
+  const toggleColorMode = () =>
+    setMode((prev) => {
+      const next = prev === "light" ? "dark" : "light";
+      try {
+        window.localStorage.setItem("color-mode", next);
+      } catch {}
+      return next;
+    });
 
   const theme = useMemo(
     () =>
